@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "b3c95e8e-4a62-4217-9876-users-management",
+    "name": "Users Management Microservice - Taller Tercer Corte",
+    "description": "Colección completa de pruebas para el microservicio users-management (Spring Boot Hexagonal / DDD). Válido para Boomerang, Postman e Insomnia.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "1. Login Administrador (Obtener JWT)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    if (jsonData.accessToken) {",
+                  "        pm.collectionVariables.set('jwt_token', jsonData.accessToken);",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"Admin1234!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "auth", "login"]
+            },
+            "description": "Autenticación para obtener el token JWT necesario para invocar los endpoints protegidos."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "2. Crear Usuario (POST /api/users)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"0001\",\n  \"name\": \"Owen Badel\",\n  \"email\": \"owenbadel19@gmail.com\",\n  \"password\": \"Abcde1234567**\",\n  \"role\": \"ADMIN\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users"]
+            },
+            "description": "Registra un nuevo usuario en estado PENDING y dispara la notificación por correo de bienvenida."
+          }
+        },
+        {
+          "name": "3. Listar todos los Usuarios (GET /api/users)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users"]
+            },
+            "description": "Obtiene la lista completa de usuarios registrados. Requiere autenticación con JWT."
+          }
+        },
+        {
+          "name": "4. Obtener Usuario por ID (GET /api/users/:id)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/users/0001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "0001"]
+            },
+            "description": "Obtiene los detalles del usuario con ID 0001. Requiere autenticación con JWT."
+          }
+        },
+        {
+          "name": "5. Actualizar Usuario / Activar Cuenta (PUT /api/users/:id)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Owen Badel\",\n  \"email\": \"owenbadel19@gmail.com\",\n  \"password\": \"Abcde1234567**\",\n  \"role\": \"ADMIN\",\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/0001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "0001"]
+            },
+            "description": "Actualiza la información del usuario y pasa su estado a ACTIVE, disparando el correo de actualización."
+          }
+        },
+        {
+          "name": "6. Eliminar Usuario por ID (DELETE /api/users/:id)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/users/0001",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "0001"]
+            },
+            "description": "Elimina el usuario por ID. Requiere autenticación con JWT."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health Check (GET /api/health)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/health",
+              "host": ["{{base_url}}"],
+              "path": ["api", "health"]
+            },
+            "description": "Verifica el estado del servicio."
+          }
+        }
+      ]
+    }
+  ]
+}
+
