@@ -8,7 +8,7 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "http://localhost:8080",
+      "value": "https://users-management-microservice-q9se.onrender.com",
       "type": "string"
     },
     {
@@ -219,4 +219,3 @@
     }
   ]
 }
-

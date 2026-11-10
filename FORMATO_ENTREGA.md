@@ -5,11 +5,11 @@
 
 ---
 
-**Título del Proyecto:** Microservicio Distribuido de Gestión de Usuarios con Arquitectura Hexagonal, Persistencia NewSQL en la Nube (TiDB), Despliegue CI/CD en PaaS (Render), Notificaciones Resilientes (Brevo API REST) y Pruebas Unitarias al 95%.
+**Proyecto:** Microservicio Distribuido de Gestión de Usuarios con Arquitectura Hexagonal, Persistencia NewSQL en la Nube (TiDB), Despliegue CI/CD en PaaS (Render), Notificaciones Resilientes (Brevo API REST) y Pruebas Unitarias.
 
 **Estudiante:** Owen Badel Hooker  
 **Docente:** Ing. John Carlos Arrieta Arrieta  
-**Fecha de Entrega:** Noviembre 2026  
+**Fecha de Entrega:** Noviembre de 2026  
 
 ---
 
@@ -18,24 +18,23 @@
 1. **Enlace del Repositorio de Código Fuente (GitHub):**  
    https://github.com/OwenBadel/users-management-microservice
 
-2. **Enlace del Informe Técnico Completo:**  
-   *(Pega aquí el enlace público de tu documento en Google Drive / Docs / OneDrive con el contenido del informe técnico)*
+2. **Enlace del Video Demostrativo de Funcionamiento (YouTube):**  
+   https://youtu.be/
 
-3. **Enlace del Video de Demostración y Funcionamiento (YouTube):**  
-   *(Pega aquí el enlace de tu video de YouTube demostrando el funcionamiento)*
+3. **Enlace del Informe Técnico Completo (Google Docs / Drive):**  
+   https://docs.google.com/document/d/
 
 ---
 
-### RECURSOS ADICIONALES DEL DESPLIEGUE EN PRODUCCIÓN
+### RECURSOS DEL SISTEMA EN PRODUCCIÓN
 
-* **URL del Microservicio Desplegado en la Nube (Render):**  
+* **Servicio Desplegado en la Nube (Render PaaS):**  
   https://users-management-microservice-q9se.onrender.com
 * **Documentación Interactiva Swagger UI:**  
   https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html
 * **Colección de Pruebas de API (JSON):**  
-  Incluida directamente en el repositorio: `Taller_Tercer_Corte_Coleccion_API.json`
+  `Taller_Tercer_Corte_Coleccion_API.json` (alojado en la raíz del repositorio)
 * **Base de Datos Distribuida (TiDB Cloud):**  
   Host: `gateway01.us-east-1.prod.aws.tidbcloud.com` (Puerto 4000) - AWS us-east-1
-* **Cobertura de Código Alcanzada (JaCoCo):**  
-  **95% de cobertura de instrucciones** (232 pruebas unitarias automatizadas ejecutadas con 0 fallos).
-
+* **Cobertura de Pruebas Unitarias (JaCoCo):**  
+  95% de cobertura de instrucciones (232 pruebas unitarias ejecutadas con 0 fallos).

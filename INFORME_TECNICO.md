@@ -197,8 +197,5 @@ Se diseñó un conjunto estructurado de peticiones HTTP exportable a herramienta
   *Swagger UI:* [https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html](https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html)
 
 * **Enlace al Video Demostrativo (YouTube):**  
-  *Enlace al video de sustentación grabado por el estudiante.*
-
----
-*Informe generado para fines de evaluación académica en el programa de Ingeniería de Sistemas de UNICOLOMBO.*
+  https://youtu.be/
 
