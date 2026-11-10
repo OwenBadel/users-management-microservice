@@ -193,10 +193,12 @@ Se diseñó un conjunto estructurado de peticiones HTTP exportable a herramienta
   Host: `gateway01.us-east-1.prod.aws.tidbcloud.com` | Puerto: `4000` | DB: `crud_usuarios`
 
 * **Servicio Desplegado en Producción (Render PaaS):**  
-  *URL pública HTTPS generada al conectar el repositorio en Render.*
+  [https://users-management-microservice-q9se.onrender.com](https://users-management-microservice-q9se.onrender.com)  
+  *Swagger UI:* [https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html](https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html)
 
 * **Enlace al Video Demostrativo (YouTube):**  
   *Enlace al video de sustentación grabado por el estudiante.*
 
 ---
 *Informe generado para fines de evaluación académica en el programa de Ingeniería de Sistemas de UNICOLOMBO.*
+

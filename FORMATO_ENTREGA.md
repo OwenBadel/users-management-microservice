@@ -29,12 +29,13 @@
 ### RECURSOS ADICIONALES DEL DESPLIEGUE EN PRODUCCIÓN
 
 * **URL del Microservicio Desplegado en la Nube (Render):**  
-  *(Pega aquí la URL de Render, ej: `https://users-management-api-xxxx.onrender.com`)*
+  https://users-management-microservice-q9se.onrender.com
 * **Documentación Interactiva Swagger UI:**  
-  *(URL de Render + `/swagger-ui/index.html`)*
+  https://users-management-microservice-q9se.onrender.com/swagger-ui/index.html
 * **Colección de Pruebas de API (JSON):**  
   Incluida directamente en el repositorio: `Taller_Tercer_Corte_Coleccion_API.json`
 * **Base de Datos Distribuida (TiDB Cloud):**  
   Host: `gateway01.us-east-1.prod.aws.tidbcloud.com` (Puerto 4000) - AWS us-east-1
 * **Cobertura de Código Alcanzada (JaCoCo):**  
   **95% de cobertura de instrucciones** (232 pruebas unitarias automatizadas ejecutadas con 0 fallos).
+
